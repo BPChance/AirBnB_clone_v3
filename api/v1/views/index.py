@@ -11,11 +11,13 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
-@app_views.route('/status')
+
+@app_views.route('/status', strict_slashes=False)
 def get_status():
     return jsonify({"status": "OK"})
 
-@app_views.route('/stats')
+
+@app_views.route('/stats', strict_slashes=False)
 def get_stats():
     stats = {
         "amenities": storage.count("Amenity"),
