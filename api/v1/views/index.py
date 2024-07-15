@@ -17,7 +17,7 @@ def get_status():
     return jsonify({"status": "OK"})
 
 
-@app_views.route('/api/vi/stats', methods=['GET'])
+@app_views.route('/api/v1/stats', methods=['GET'])
 def get_stats():
     stats = {
         "amenities": storage.count("Amenity"),
