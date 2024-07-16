@@ -40,6 +40,9 @@ def create_state():
     """ creates a state """
     if not request.json:
         abort(400, description="Not a JSON")
+    data = request.get_json(silent=True)
+    if data is None:
+        abort(400, "Not a JSON")
     if 'name' not in request.json:
         abort(400, description="Missing name")
     data = request.get_json()
