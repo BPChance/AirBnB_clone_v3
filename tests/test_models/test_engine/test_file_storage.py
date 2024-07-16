@@ -124,6 +124,8 @@ class TestFileStorage(unittest.TestCase):
     def test_get(self):
         """ test for get method """
         self.state = State()
+        self.city = City()
+        self.storage.new(self.city)
         self.storage.new(self.state)
         self.storage.save()
 
