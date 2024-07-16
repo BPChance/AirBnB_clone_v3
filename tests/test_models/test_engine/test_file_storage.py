@@ -156,7 +156,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(count_states, 1)
         self.assertEqual(count_cities, 1)
 
-        self.storage.delete(city1)
+        self.storage.delete(city1.id)
         self.storage.save()
 
         count_all = self.storage.count()
