@@ -10,8 +10,9 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
-model_classes = {"amenities": Amenity, "cities": City, "places": Place,
-           "reviews": Review, "states": State, "users": User}
+model_classes = {"amenities": Amenity, "cities": City,
+                 "places": Place, "reviews": Review, "states": State, "users": User}
+
 
 @app_views.route('/status', methods=['GET'])
 def get_status():
@@ -27,13 +28,3 @@ def get_stats():
         object_dict = {object: storage.count(model_classes[object])}
         return_dict.update(object_dict)
     return jsonify(return_dict)
-
-    #stats = {
-     #   "amenities": storage.count("Amenity"),
-      #  "cities": storage.count("City"),
-       # "places": storage.count("Place"),
-        #"reviews": storage.count("Review"),
-        #"states": storage.count("State"),
-        #"users": storage.count("User")
-    #}
-    #return jsonify(stats)
