@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" places module """
 from flask import jsonify, request, abort
 from models import storage
 from models.user import Place, User
