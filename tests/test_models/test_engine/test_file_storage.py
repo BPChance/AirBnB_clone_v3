@@ -142,7 +142,7 @@ class TestFileStorage(unittest.TestCase):
     def test_count(self):
         """ test for count method """
         state1 = State()
-        city1= City()
+        city1 = City()
 
         self.storage.new(state1)
         self.storage.new(city1)
