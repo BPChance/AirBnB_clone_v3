@@ -141,10 +141,11 @@ class TestFileStorage(unittest.TestCase):
     @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_count(self):
         """ test for count method """
-        self.state = State()
-        self.city = City()
-        self.storage.new(self.state)
-        self.storage.new(self.city)
+        state1 = State()
+        city1= City()
+
+        self.storage.new(state1)
+        self.storage.new(city1)
         self.storage.save()
 
         count_all = self.storage.count()
@@ -155,7 +156,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(count_states, 1)
         self.assertEqual(count_cities, 1)
 
-        self.storage.delete(self.city)
+        self.storage.delete(city1)
         self.storage.save()
 
         count_all = self.storage.count()
