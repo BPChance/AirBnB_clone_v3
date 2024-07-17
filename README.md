@@ -150,6 +150,21 @@ EOF  all  create  destroy  help  quit  show  update
 (hbnb) quit
 ```
 
+## Newly Added Functionalities
+#### Enhanced Storage operations
+* get method: Retrieve a specific object from storage by its class and ID.
+    * Usage: 'storage.get(State, state_id)'
+* count method: Count the number of objects in storage, optionally filtering by class
+    * Usage: 'storage.count()','storage.count(City)'
+
+## Model Views and API
+* #### Views for Model Classes: 
+Created views to handle HTTP requests and responses for different model classes ('State', 'City', 'Amenity', 'Place', 'Review', 'User').
+
+## CORS support
+* #### CORS Implementation: 
+Enabled CORS in the Flask app to allow cross-origin requests, enhancing flexibility and security of API interactions.
+ 
 ## Bugs
 No known bugs at this time. 
 
